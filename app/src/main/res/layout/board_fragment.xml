@@ -21,6 +21,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonOne"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="15dp"
@@ -34,10 +35,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerText"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonTwo"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -51,10 +56,14 @@
         app:layout_constraintStart_toEndOf="@+id/buttonOne"
         app:layout_constraintTop_toBottomOf="@+id/headerText"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonThree"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -68,10 +77,14 @@
         app:layout_constraintStart_toEndOf="@+id/buttonTwo"
         app:layout_constraintTop_toBottomOf="@+id/headerText"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonFour"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -85,10 +98,14 @@
         app:layout_constraintStart_toEndOf="@+id/buttonThree"
         app:layout_constraintTop_toBottomOf="@+id/headerText"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonFive"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="15dp"
@@ -102,10 +119,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonOne"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonSix"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -119,10 +140,14 @@
         app:layout_constraintStart_toEndOf="@+id/buttonFive"
         app:layout_constraintTop_toBottomOf="@+id/buttonTwo"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonSeven"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -136,10 +161,14 @@
         app:layout_constraintStart_toEndOf="@+id/buttonSix"
         app:layout_constraintTop_toBottomOf="@+id/buttonThree"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonEight"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -153,10 +182,14 @@
         app:layout_constraintStart_toEndOf="@+id/buttonSeven"
         app:layout_constraintTop_toBottomOf="@+id/buttonFour"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonNine"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="15dp"
@@ -170,10 +203,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonFive"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonTen"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -187,10 +224,14 @@
         app:layout_constraintStart_toEndOf="@+id/buttonNine"
         app:layout_constraintTop_toBottomOf="@+id/buttonSix"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonEleven"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -204,10 +245,14 @@
         app:layout_constraintStart_toEndOf="@+id/buttonTen"
         app:layout_constraintTop_toBottomOf="@+id/buttonSeven"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonTwelve"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -221,10 +266,14 @@
         app:layout_constraintStart_toEndOf="@+id/buttonEleven"
         app:layout_constraintTop_toBottomOf="@+id/buttonEight"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonThirteen"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="15dp"
@@ -236,10 +285,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonNine"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonFourteen"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -251,10 +304,14 @@
         app:layout_constraintStart_toEndOf="@+id/buttonThirteen"
         app:layout_constraintTop_toBottomOf="@+id/buttonTen"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonFifteen"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -266,10 +323,14 @@
         app:layout_constraintStart_toEndOf="@+id/buttonFourteen"
         app:layout_constraintTop_toBottomOf="@+id/buttonEleven"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonSixteen"
+        android:onClick="buttonClicked"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -281,7 +342,10 @@
         app:layout_constraintStart_toEndOf="@+id/buttonFifteen"
         app:layout_constraintTop_toBottomOf="@+id/buttonTwelve"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="2dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="40dp"/>
 
     <TextView
         android:id="@+id/currentGuessText"
