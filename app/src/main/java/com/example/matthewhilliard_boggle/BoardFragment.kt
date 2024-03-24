@@ -1,10 +1,13 @@
 package com.example.matthewhilliard_boggle
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class BoardFragment : Fragment() {
@@ -16,6 +19,8 @@ class BoardFragment : Fragment() {
             buttonThirteen, buttonFourteen, buttonFifteen, buttonSixteen
         )
     }
+
+    private val pressedButtons = mutableListOf<Button>()
 
     private lateinit var buttonOne: Button
     private lateinit var buttonTwo: Button
@@ -34,7 +39,9 @@ class BoardFragment : Fragment() {
     private lateinit var buttonFifteen: Button
     private lateinit var buttonSixteen: Button
 
-
+    private lateinit var currentGuessText: TextView
+    private lateinit var clearButton: Button
+    private lateinit var submitButton: Button
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -64,8 +71,21 @@ class BoardFragment : Fragment() {
         buttonFifteen = view.findViewById(R.id.buttonFifteen)
         buttonSixteen = view.findViewById(R.id.buttonSixteen)
 
+        clearButton = view.findViewById(R.id.clearButton)
+        clearButton.setOnClickListener(){
+            clearPressed()
+        }
+
+        submitButton = view.findViewById(R.id.submitButton)
+        submitButton.setOnClickListener(){
+            submitPressed(view)
+        }
+
+        currentGuessText = view.findViewById(R.id.currentGuessText)
+        currentGuessText.text = ""
+
         randomizeLetters()
-        resetButtonColor()
+        resetButtons()
     }
 
     private fun randomizeLetters(){
@@ -75,7 +95,30 @@ class BoardFragment : Fragment() {
         }
     }
 
-    private fun resetButtonColor(){
+    private fun resetButtons(){
+        boardButtons.forEach { button ->
+            button.setBackgroundColor(Color.WHITE)
+            button.setOnClickListener {
+                if (pressedButtons.contains(button)) {
+                    Toast.makeText(requireContext(), "This letter has already been used", Toast.LENGTH_SHORT).show()
+                } else {
+                    button.setBackgroundColor(Color.GRAY)
+                    currentGuessText.append(button.text)
+                    pressedButtons.add(button)
+                }
+            }
+        }
+    }
 
+    private fun clearPressed(){
+        currentGuessText.text = ""
+        pressedButtons.clear()
+        resetButtons()
+    }
+
+    private fun submitPressed(view: View){
+        currentGuessText.text = ""
+        pressedButtons.clear()
+        resetButtons()
     }
 }
