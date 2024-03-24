@@ -1,5 +1,6 @@
 package com.example.matthewhilliard_boggle
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +13,12 @@ import androidx.fragment.app.Fragment
 import kotlin.math.abs
 
 class BoardFragment : Fragment() {
+
+    interface BoardFragmentListener {
+        fun submitPressed(text: CharSequence)
+    }
+    private var listener: BoardFragment.BoardFragmentListener? = null
+
     private val boardButtons: Array<Button> by lazy {
         arrayOf(
             buttonOne, buttonTwo, buttonThree, buttonFour,
@@ -56,7 +63,14 @@ class BoardFragment : Fragment() {
         return view
     }
 
-    private fun newGame(view: View){
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is BoardFragment.BoardFragmentListener) {
+            listener = context
+        }
+    }
+
+    fun newGame(view: View){
         buttonOne = view.findViewById(R.id.buttonOne)
         buttonTwo = view.findViewById(R.id.buttonTwo)
         buttonThree = view.findViewById(R.id.buttonThree)
@@ -87,6 +101,7 @@ class BoardFragment : Fragment() {
         currentGuessText = view.findViewById(R.id.currentGuessText)
         currentGuessText.text = ""
 
+        pressedButtons.clear()
         randomizeLetters()
         resetButtons()
     }
@@ -144,6 +159,7 @@ class BoardFragment : Fragment() {
     }
 
     private fun submitPressed(view: View){
+        listener?.submitPressed(currentGuessText.text)
         currentGuessText.text = ""
         pressedButtons.clear()
         resetButtons()

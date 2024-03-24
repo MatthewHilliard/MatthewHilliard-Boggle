@@ -12,7 +12,7 @@
         android:layout_marginTop="592dp"
         android:layout_marginBottom="99dp"
         android:paddingLeft="20dp"
-        android:text="SCORE: "
+        android:text="SCORE: 0"
         android:textColor="@color/black"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
