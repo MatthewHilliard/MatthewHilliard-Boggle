@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import kotlin.math.abs
 
 class BoardFragment : Fragment() {
     private val boardButtons: Array<Button> by lazy {
@@ -38,6 +39,8 @@ class BoardFragment : Fragment() {
     private lateinit var buttonFourteen: Button
     private lateinit var buttonFifteen: Button
     private lateinit var buttonSixteen: Button
+
+    private var prevButton: Button? = null
 
     private lateinit var currentGuessText: TextView
     private lateinit var clearButton: Button
@@ -96,18 +99,42 @@ class BoardFragment : Fragment() {
     }
 
     private fun resetButtons(){
-        boardButtons.forEach { button ->
+        prevButton = null
+        boardButtons.forEachIndexed { index, button ->
+            button.tag = index
             button.setBackgroundColor(Color.WHITE)
             button.setOnClickListener {
-                if (pressedButtons.contains(button)) {
-                    Toast.makeText(requireContext(), "This letter has already been used", Toast.LENGTH_SHORT).show()
-                } else {
-                    button.setBackgroundColor(Color.GRAY)
-                    currentGuessText.append(button.text)
-                    pressedButtons.add(button)
-                }
+                letterPressed(button)
             }
         }
+    }
+
+    private fun letterPressed(button: Button){
+        if (pressedButtons.contains(button)) {
+            Toast.makeText(requireContext(), "This letter has already been used", Toast.LENGTH_SHORT).show()
+            return
+        } else if(prevButton != null){
+            val currRow = button.tag.toString().toInt() / 4
+            val currCol = button.tag.toString().toInt() % 4
+            val prevRow = prevButton!!.tag.toString().toInt() / 4
+            val prevCol = prevButton!!.tag.toString().toInt() % 4
+
+            if (!isValidConnection(currRow, currCol, prevRow, prevCol)) {
+                Toast.makeText(requireContext(), "You may only select connected letters", Toast.LENGTH_SHORT).show()
+                return
+            }
+        }
+        button.setBackgroundColor(Color.GRAY)
+        currentGuessText.append(button.text)
+        pressedButtons.add(button)
+        prevButton = button
+    }
+
+    private fun isValidConnection(currRow: Int, currCol: Int, prevRow: Int, prevCol: Int): Boolean {
+        val rowDiff = abs(currRow - prevRow)
+        val colDiff = abs(currCol - prevCol)
+
+        return rowDiff <= 1 && colDiff <= 1
     }
 
     private fun clearPressed(){
