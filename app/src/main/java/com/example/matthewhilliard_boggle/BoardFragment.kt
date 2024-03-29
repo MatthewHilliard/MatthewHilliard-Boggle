@@ -107,9 +107,19 @@ class BoardFragment : Fragment() {
     }
 
     private fun randomizeLetters(){
-        boardButtons.forEach { button ->
-            val randomLetter = ('A'..'Z').random()
-            button.text = randomLetter.toString()
+        val vowels = listOf('A', 'E', 'I', 'O', 'U')
+        var vowelCount = 0
+        while(vowelCount < 2) {
+            vowelCount = 0
+            boardButtons.forEach { button ->
+                val randomLetter = ('A'..'Z').random()
+
+                if (vowels.contains(randomLetter)) {
+                    vowelCount++
+                }
+
+                button.text = randomLetter.toString()
+            }
         }
     }
 

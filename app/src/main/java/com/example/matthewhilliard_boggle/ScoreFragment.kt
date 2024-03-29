@@ -115,7 +115,11 @@ class ScoreFragment : Fragment() , SensorEventListener {
                 Toast.makeText(requireContext(), "That's correct, +$addScore", Toast.LENGTH_SHORT).show()
             }
             else {
-                currScore -= 10
+                if(currScore - 10 < 0){
+                    currScore = 0
+                } else{
+                    currScore -= 10
+                }
                 Toast.makeText(requireContext(), "That's incorrect, -10", Toast.LENGTH_SHORT).show()
             }
 
